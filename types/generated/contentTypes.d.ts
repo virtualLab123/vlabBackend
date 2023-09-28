@@ -361,6 +361,108 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiExperimentExperiment extends Schema.CollectionType {
+  collectionName: 'experiments';
+  info: {
+    singularName: 'experiment';
+    pluralName: 'experiments';
+    displayName: 'Experiments';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ExperimentID: Attribute.UID;
+    Experiment_Name: Attribute.String;
+    Description: Attribute.Text;
+    Due_Date: Attribute.Date;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::experiment.experiment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::experiment.experiment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFacultyFaculty extends Schema.CollectionType {
+  collectionName: 'faculties';
+  info: {
+    singularName: 'faculty';
+    pluralName: 'faculties';
+    displayName: 'Faculty ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FacultyID: Attribute.UID;
+    Email: Attribute.Email;
+    PhoneNo: Attribute.BigInteger;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faculty.faculty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faculty.faculty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSubmissionSubmission extends Schema.CollectionType {
+  collectionName: 'submissions';
+  info: {
+    singularName: 'submission';
+    pluralName: 'submissions';
+    displayName: 'Submission';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Student_Name: Attribute.String;
+    Exp1: Attribute.Decimal;
+    Exp2: Attribute.Decimal;
+    Exp3: Attribute.Decimal;
+    Exp4: Attribute.Decimal;
+    Exp5: Attribute.Decimal;
+    Total_Marks: Attribute.Decimal;
+    Average_Marks: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::submission.submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::submission.submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -687,6 +789,9 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::experiment.experiment': ApiExperimentExperiment;
+      'api::faculty.faculty': ApiFacultyFaculty;
+      'api::submission.submission': ApiSubmissionSubmission;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
