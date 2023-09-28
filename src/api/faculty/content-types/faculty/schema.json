@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faculties",
+  "info": {
+    "singularName": "faculty",
+    "pluralName": "faculties",
+    "displayName": "Faculty "
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FacultyID": {
+      "type": "uid"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "PhoneNo": {
+      "type": "biginteger"
+    }
+  }
+}

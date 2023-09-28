@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "submissions",
+  "info": {
+    "singularName": "submission",
+    "pluralName": "submissions",
+    "displayName": "Submission"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Student_Name": {
+      "type": "string"
+    },
+    "Exp1": {
+      "type": "decimal"
+    },
+    "Exp2": {
+      "type": "decimal"
+    },
+    "Exp3": {
+      "type": "decimal"
+    },
+    "Exp4": {
+      "type": "decimal"
+    },
+    "Exp5": {
+      "type": "decimal"
+    },
+    "Total_Marks": {
+      "type": "decimal"
+    },
+    "Average_Marks": {
+      "type": "decimal"
+    }
+  }
+}
