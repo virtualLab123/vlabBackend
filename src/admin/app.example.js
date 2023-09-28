@@ -1,4 +1,4 @@
-const config = {
+const config = { 
   locales: [
     // 'ar',
     // 'fr',
