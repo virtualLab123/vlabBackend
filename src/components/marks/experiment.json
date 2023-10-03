@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_marks_experiments",
+  "info": {
+    "displayName": "Experiment",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "record": {
+      "type": "integer"
+    },
+    "output": {
+      "type": "integer"
+    },
+    "viva": {
+      "type": "integer"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "ExpNo": {
+      "type": "integer"
+    },
+    "Submitted_Date": {
+      "type": "date"
+    }
+  }
+}

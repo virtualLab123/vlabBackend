@@ -367,12 +367,13 @@ export interface ApiExperimentExperiment extends Schema.CollectionType {
     singularName: 'experiment';
     pluralName: 'experiments';
     displayName: 'Experiments';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    ExperimentID: Attribute.UID;
+    ExperimentNo: Attribute.UID;
     Experiment_Name: Attribute.String;
     Description: Attribute.Text;
     Due_Date: Attribute.Date;
@@ -432,19 +433,16 @@ export interface ApiSubmissionSubmission extends Schema.CollectionType {
     singularName: 'submission';
     pluralName: 'submissions';
     displayName: 'Submission';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Student_Name: Attribute.String;
-    Exp1: Attribute.Decimal;
-    Exp2: Attribute.Decimal;
-    Exp3: Attribute.Decimal;
-    Exp4: Attribute.Decimal;
-    Exp5: Attribute.Decimal;
     Total_Marks: Attribute.Decimal;
     Average_Marks: Attribute.Decimal;
+    roll: Attribute.BigInteger;
+    Experiments: Attribute.Component<'marks.experiment', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
