@@ -23,6 +23,12 @@
     },
     "Submitted_Date": {
       "type": "date"
+    },
+    "code": {
+      "type": "richtext"
+    },
+    "outputContent": {
+      "type": "string"
     }
   }
 }

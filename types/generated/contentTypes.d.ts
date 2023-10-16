@@ -427,6 +427,38 @@ export interface ApiFacultyFaculty extends Schema.CollectionType {
   };
 }
 
+export interface ApiProgressProgress extends Schema.CollectionType {
+  collectionName: 'progresses';
+  info: {
+    singularName: 'progress';
+    pluralName: 'progresses';
+    displayName: 'progress';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    roll: Attribute.BigInteger;
+    progress: Attribute.Component<'marks.progress', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::progress.progress',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::progress.progress',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSubmissionSubmission extends Schema.CollectionType {
   collectionName: 'submissions';
   info: {
@@ -789,6 +821,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::experiment.experiment': ApiExperimentExperiment;
       'api::faculty.faculty': ApiFacultyFaculty;
+      'api::progress.progress': ApiProgressProgress;
       'api::submission.submission': ApiSubmissionSubmission;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

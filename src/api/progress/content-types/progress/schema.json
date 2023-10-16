@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "progresses",
+  "info": {
+    "singularName": "progress",
+    "pluralName": "progresses",
+    "displayName": "progress",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "roll": {
+      "type": "biginteger"
+    },
+    "progress": {
+      "displayName": "progress",
+      "type": "component",
+      "repeatable": true,
+      "component": "marks.progress"
+    }
+  }
+}
