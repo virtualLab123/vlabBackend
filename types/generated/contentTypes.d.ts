@@ -361,138 +361,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiExperimentExperiment extends Schema.CollectionType {
-  collectionName: 'experiments';
-  info: {
-    singularName: 'experiment';
-    pluralName: 'experiments';
-    displayName: 'Experiments';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    ExperimentNo: Attribute.UID;
-    Experiment_Name: Attribute.String;
-    Description: Attribute.Text;
-    Due_Date: Attribute.Date;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::experiment.experiment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::experiment.experiment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiFacultyFaculty extends Schema.CollectionType {
-  collectionName: 'faculties';
-  info: {
-    singularName: 'faculty';
-    pluralName: 'faculties';
-    displayName: 'Faculty ';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    FacultyID: Attribute.UID;
-    Email: Attribute.Email;
-    PhoneNo: Attribute.BigInteger;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::faculty.faculty',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::faculty.faculty',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiProgressProgress extends Schema.CollectionType {
-  collectionName: 'progresses';
-  info: {
-    singularName: 'progress';
-    pluralName: 'progresses';
-    displayName: 'progress';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    roll: Attribute.BigInteger;
-    progress: Attribute.Component<'marks.progress', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::progress.progress',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::progress.progress',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSubmissionSubmission extends Schema.CollectionType {
-  collectionName: 'submissions';
-  info: {
-    singularName: 'submission';
-    pluralName: 'submissions';
-    displayName: 'Submission';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Total_Marks: Attribute.Decimal;
-    Average_Marks: Attribute.Decimal;
-    roll: Attribute.BigInteger;
-    Experiments: Attribute.Component<'marks.experiment', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::submission.submission',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::submission.submission',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -809,6 +677,138 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiExperimentExperiment extends Schema.CollectionType {
+  collectionName: 'experiments';
+  info: {
+    singularName: 'experiment';
+    pluralName: 'experiments';
+    displayName: 'Experiments';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ExperimentNo: Attribute.UID;
+    Experiment_Name: Attribute.String;
+    Description: Attribute.Text;
+    Due_Date: Attribute.Date;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::experiment.experiment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::experiment.experiment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFacultyFaculty extends Schema.CollectionType {
+  collectionName: 'faculties';
+  info: {
+    singularName: 'faculty';
+    pluralName: 'faculties';
+    displayName: 'Faculty ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    FacultyID: Attribute.UID;
+    Email: Attribute.Email;
+    PhoneNo: Attribute.BigInteger;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::faculty.faculty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::faculty.faculty',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProgressProgress extends Schema.CollectionType {
+  collectionName: 'progresses';
+  info: {
+    singularName: 'progress';
+    pluralName: 'progresses';
+    displayName: 'progress';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    roll: Attribute.BigInteger;
+    progress: Attribute.Component<'marks.progress', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::progress.progress',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::progress.progress',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSubmissionSubmission extends Schema.CollectionType {
+  collectionName: 'submissions';
+  info: {
+    singularName: 'submission';
+    pluralName: 'submissions';
+    displayName: 'Submission';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Total_Marks: Attribute.Decimal;
+    Average_Marks: Attribute.Decimal;
+    roll: Attribute.BigInteger;
+    Experiments: Attribute.Component<'marks.experiment', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::submission.submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::submission.submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -819,16 +819,16 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::experiment.experiment': ApiExperimentExperiment;
-      'api::faculty.faculty': ApiFacultyFaculty;
-      'api::progress.progress': ApiProgressProgress;
-      'api::submission.submission': ApiSubmissionSubmission;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::experiment.experiment': ApiExperimentExperiment;
+      'api::faculty.faculty': ApiFacultyFaculty;
+      'api::progress.progress': ApiProgressProgress;
+      'api::submission.submission': ApiSubmissionSubmission;
     }
   }
 }
