@@ -7,7 +7,7 @@ export interface MarksExperiment extends Schema.Component {
     description: '';
   };
   attributes: {
-    record: Attribute.Integer;
+    observation: Attribute.Integer;
     output: Attribute.Integer;
     viva: Attribute.Integer;
     total: Attribute.Integer;
