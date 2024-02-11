@@ -15,6 +15,7 @@ export interface MarksExperiment extends Schema.Component {
     Submitted_Date: Attribute.Date;
     code: Attribute.RichText;
     outputContent: Attribute.String;
+    hash: Attribute.String;
   };
 }
 

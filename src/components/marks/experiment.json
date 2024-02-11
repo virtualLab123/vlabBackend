@@ -29,6 +29,9 @@
     },
     "outputContent": {
       "type": "string"
+    },
+    "hash": {
+      "type": "string"
     }
   }
 }

@@ -70,6 +70,9 @@
     },
     "roll": {
       "type": "biginteger"
+    },
+    "userRole": {
+      "type": "string"
     }
   }
 }
