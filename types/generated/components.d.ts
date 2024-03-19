@@ -16,6 +16,7 @@ export interface MarksExperiment extends Schema.Component {
     code: Attribute.RichText;
     outputContent: Attribute.String;
     hash: Attribute.String;
+    lab: Attribute.String;
   };
 }
 
@@ -23,10 +24,12 @@ export interface MarksProgress extends Schema.Component {
   collectionName: 'components_marks_progresses';
   info: {
     displayName: 'progress';
+    description: '';
   };
   attributes: {
     experiment: Attribute.String;
     codeId: Attribute.String;
+    labCode: Attribute.String;
   };
 }
 

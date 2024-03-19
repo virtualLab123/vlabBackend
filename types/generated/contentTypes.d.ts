@@ -658,9 +658,9 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
-    batch: Attribute.Integer;
     roll: Attribute.BigInteger;
     userRole: Attribute.String;
+    semester: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -684,6 +684,7 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
     singularName: 'announcement';
     pluralName: 'announcements';
     displayName: 'Announcement';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -693,6 +694,7 @@ export interface ApiAnnouncementAnnouncement extends Schema.CollectionType {
     subject: Attribute.String;
     description: Attribute.String;
     date: Attribute.Date;
+    labCode: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -723,10 +725,11 @@ export interface ApiExperimentExperiment extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    ExperimentNo: Attribute.UID;
     Experiment_Name: Attribute.String;
     Description: Attribute.Text;
     Due_Date: Attribute.Date;
+    labCode: Attribute.String;
+    ExperimentNo: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -745,34 +748,29 @@ export interface ApiExperimentExperiment extends Schema.CollectionType {
   };
 }
 
-export interface ApiFacultyFaculty extends Schema.CollectionType {
-  collectionName: 'faculties';
+export interface ApiLabLab extends Schema.CollectionType {
+  collectionName: 'labs';
   info: {
-    singularName: 'faculty';
-    pluralName: 'faculties';
-    displayName: 'Faculty ';
+    singularName: 'lab';
+    pluralName: 'labs';
+    displayName: 'Labs';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    FacultyID: Attribute.UID;
-    Email: Attribute.Email;
-    PhoneNo: Attribute.BigInteger;
+    Faculty: Attribute.String;
+    Semester: Attribute.String;
+    Name: Attribute.String;
+    image: Attribute.Media;
+    labCode: Attribute.UID;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::faculty.faculty',
-      'oneToOne',
-      'admin::user'
-    > &
+    createdBy: Attribute.Relation<'api::lab.lab', 'oneToOne', 'admin::user'> &
       Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::faculty.faculty',
-      'oneToOne',
-      'admin::user'
-    > &
+    updatedBy: Attribute.Relation<'api::lab.lab', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -861,7 +859,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::announcement.announcement': ApiAnnouncementAnnouncement;
       'api::experiment.experiment': ApiExperimentExperiment;
-      'api::faculty.faculty': ApiFacultyFaculty;
+      'api::lab.lab': ApiLabLab;
       'api::progress.progress': ApiProgressProgress;
       'api::submission.submission': ApiSubmissionSubmission;
     }

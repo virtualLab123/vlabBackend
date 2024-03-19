@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "ExperimentNo": {
-      "type": "uid"
-    },
     "Experiment_Name": {
       "type": "string"
     },
@@ -23,6 +20,12 @@
     },
     "Due_Date": {
       "type": "date"
+    },
+    "labCode": {
+      "type": "string"
+    },
+    "ExperimentNo": {
+      "type": "string"
     }
   }
 }

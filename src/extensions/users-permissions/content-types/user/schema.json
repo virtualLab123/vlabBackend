@@ -65,13 +65,13 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "batch": {
-      "type": "integer"
-    },
     "roll": {
       "type": "biginteger"
     },
     "userRole": {
+      "type": "string"
+    },
+    "semester": {
       "type": "string"
     }
   }

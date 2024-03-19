@@ -4,7 +4,8 @@
   "info": {
     "singularName": "announcement",
     "pluralName": "announcements",
-    "displayName": "Announcement"
+    "displayName": "Announcement",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,6 +23,9 @@
     },
     "date": {
       "type": "date"
+    },
+    "labCode": {
+      "type": "string"
     }
   }
 }

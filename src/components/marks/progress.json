@@ -1,7 +1,8 @@
 {
   "collectionName": "components_marks_progresses",
   "info": {
-    "displayName": "progress"
+    "displayName": "progress",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,6 +10,9 @@
       "type": "string"
     },
     "codeId": {
+      "type": "string"
+    },
+    "labCode": {
       "type": "string"
     }
   }

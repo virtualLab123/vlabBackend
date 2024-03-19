@@ -32,6 +32,9 @@
     },
     "hash": {
       "type": "string"
+    },
+    "lab": {
+      "type": "string"
     }
   }
 }
